@@ -1,6 +1,8 @@
 package com.example.ef_grupo_3.Beans;
 
-public class Escaneo3D {
+import com.example.ef_grupo_3.Daos.CostoRealizacion;
+
+public class Escaneo3D implements CostoRealizacion {
     private int id;
     private double largo;
     private double ancho;
@@ -72,5 +74,15 @@ public class Escaneo3D {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    @Override
+    public void setCosto() {
+
+    }
+
+    @Override
+    public void setRealizacion() {
+
     }
 }
