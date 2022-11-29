@@ -56,7 +56,14 @@ CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`impresion3D` (
   `autoservicio` INT(1) NOT NULL,
   `valido` INT(1) NOT NULL,
   `fecha` DATETIME NOT NULL,
-  PRIMARY KEY (`id`))
+  `usuarios_correo` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_impresion3D_usuarios1_idx` (`usuarios_correo` ASC) VISIBLE,
+  CONSTRAINT `fk_impresion3D_usuarios1`
+    FOREIGN KEY (`usuarios_correo`)
+    REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -72,7 +79,14 @@ CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`corteLaser` (
   `url` VARCHAR(100) NOT NULL,
   `fecha` DATETIME NOT NULL,
   `valido` INT(1) NOT NULL,
-  PRIMARY KEY (`id`))
+  `usuarios_correo` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_corteLaser_usuarios1_idx` (`usuarios_correo` ASC) VISIBLE,
+  CONSTRAINT `fk_corteLaser_usuarios1`
+    FOREIGN KEY (`usuarios_correo`)
+    REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -85,71 +99,12 @@ CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`escaneo3D` (
   `ancho` DOUBLE NOT NULL,
   `altura` DOUBLE NOT NULL,
   `resolucion` INT(1) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ef_grupo_3`.`usuarios_has_impresion3D`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`usuarios_has_impresion3D` (
-  `correo` VARCHAR(50) NOT NULL,
-  `id` INT NOT NULL,
-  PRIMARY KEY (`correo`, `id`),
-  INDEX `fk_usuarios_has_impresion3D_impresion3D1_idx` (`id` ASC) VISIBLE,
-  INDEX `fk_usuarios_has_impresion3D_usuarios1_idx` (`correo` ASC) VISIBLE,
-  CONSTRAINT `fk_usuarios_has_impresion3D_usuarios1`
-    FOREIGN KEY (`correo`)
+  `usuarios_correo` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_escaneo3D_usuarios1_idx` (`usuarios_correo` ASC) VISIBLE,
+  CONSTRAINT `fk_escaneo3D_usuarios1`
+    FOREIGN KEY (`usuarios_correo`)
     REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuarios_has_impresion3D_impresion3D1`
-    FOREIGN KEY (`id`)
-    REFERENCES `ef_grupo_3`.`impresion3D` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ef_grupo_3`.`usuarios_has_corteLaser`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`usuarios_has_corteLaser` (
-  `correo` VARCHAR(50) NOT NULL,
-  `id` INT NOT NULL,
-  PRIMARY KEY (`correo`, `id`),
-  INDEX `fk_usuarios_has_corteLaser_corteLaser1_idx` (`id` ASC) VISIBLE,
-  INDEX `fk_usuarios_has_corteLaser_usuarios1_idx` (`correo` ASC) VISIBLE,
-  CONSTRAINT `fk_usuarios_has_corteLaser_usuarios1`
-    FOREIGN KEY (`correo`)
-    REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuarios_has_corteLaser_corteLaser1`
-    FOREIGN KEY (`id`)
-    REFERENCES `ef_grupo_3`.`corteLaser` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ef_grupo_3`.`usuarios_has_escaneo3D`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`usuarios_has_escaneo3D` (
-  `correo` VARCHAR(50) NOT NULL,
-  `id` INT NOT NULL,
-  PRIMARY KEY (`correo`, `id`),
-  INDEX `fk_usuarios_has_escaneo3D_escaneo3D1_idx` (`id` ASC) VISIBLE,
-  INDEX `fk_usuarios_has_escaneo3D_usuarios1_idx` (`correo` ASC) VISIBLE,
-  CONSTRAINT `fk_usuarios_has_escaneo3D_usuarios1`
-    FOREIGN KEY (`correo`)
-    REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuarios_has_escaneo3D_escaneo3D1`
-    FOREIGN KEY (`id`)
-    REFERENCES `ef_grupo_3`.`escaneo3D` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
