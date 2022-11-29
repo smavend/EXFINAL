@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>exFinal</artifactId>
+    <artifactId>EF_Grupo_3</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>exFinal</name>
+    <name>EF_Grupo_3</name>
     <packaging>war</packaging>
 
     <properties>
