@@ -12,4 +12,6 @@ public class CorteLaser {
    Usuario usuario;
    double costo;
    double realizacion;
+
+
 }
