@@ -4,6 +4,7 @@ public class Impresion3D {
     private int id;
     private int densidad;
     private String grosor;
+    private 
     private double altura;
     private String material;
     private String url;
