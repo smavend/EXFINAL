@@ -1,5 +1,6 @@
 package com.example.ef_grupo_3.Servlets;
 
+import com.example.ef_grupo_3.Daos.DaoServicios;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -22,13 +23,13 @@ public class ServicesServlet extends HttpServlet {
         ArrayList<String> opciones = new ArrayList<>();
         opciones.add("Nombre");
         opciones.add("Pais");
-        DaoServicios daoServicios = new DaoServicios();
 
+        DaoServicios daoServicios = new DaoServicios();
         switch (action) {
             case "listar":
-                request.setAttribute("listaImpresion3D", daoArbitros.listarImpresion3D());
-                request.setAttribute("listaCorteLaser", daoArbitros.listarCorteLaser());
-                request.setAttribute("listaEscaneo3D", daoArbitros.listarEscaneo3D());
+                request.setAttribute("listaImpresion3D", daoServicios.listarImpresion3D());
+                request.setAttribute("listaCorteLaser", daoServicios.listarCorteLaser());
+                request.setAttribute("listaEscaneo3D", daoServicios.listarEscaneo3D());
 
                 view = request.getRequestDispatcher("listarServicios.jsp");
                 view.forward(request, response);

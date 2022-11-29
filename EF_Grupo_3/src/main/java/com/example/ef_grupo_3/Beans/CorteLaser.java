@@ -1,5 +1,6 @@
 package com.example.ef_grupo_3.Beans;
 
+
 import com.example.ef_grupo_3.Daos.CostoRealizacion;
 
 public class CorteLaser implements CostoRealizacion {
@@ -107,4 +108,5 @@ public class CorteLaser implements CostoRealizacion {
    public void setRealizacion() {
 
    }
+>>>>>>> ee99634808171906f7a05d80d72e2d14379f8bf8
 }
