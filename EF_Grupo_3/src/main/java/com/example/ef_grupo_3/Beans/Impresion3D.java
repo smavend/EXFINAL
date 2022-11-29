@@ -114,6 +114,6 @@ public class Impresion3D implements CostoRealizacion {
 
     @Override
     public void setRealizacion() {
+        this.realizacion = this.getDensidad()*0.1;
     }
-    
 }
