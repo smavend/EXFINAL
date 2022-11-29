@@ -91,17 +91,10 @@ public class Impresion3D implements CostoRealizacion {
         return costo;
     }
 
-    public void setCosto(double costo) {
-        this.costo = costo;
-    }
-
     public double getRealizacion() {
         return realizacion;
     }
 
-    public void setRealizacion(double realizacion) {
-        this.realizacion = realizacion;
-    }
 
     @Override
     public void setCosto() {
