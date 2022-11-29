@@ -3,6 +3,7 @@
 <jsp:useBean id="listaGrosores" scope="request" type="java.util.ArrayList<java.lang.String>"/>
 <jsp:useBean id="listaAlturaCapas" scope="request" type="java.util.ArrayList<java.lang.String>"/>
 <jsp:useBean id="listaMateriales" scope="request" type="java.util.ArrayList<java.lang.String>"/>
+<jsp:useBean id="listaAutoservicios" scope="request" type="java.util.ArrayList<java.lang.String>"/>
 
 
 <html>
@@ -70,26 +71,23 @@
           </select>
         </div>
 
-
-
         <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" class="form-control" name="nombre">
+          <label>URL</label>
+          <input type="text" class="form-control" name="url">
         </div>
 
-
-
         <div class="form-group">
-          <label for="pais">País</label>
-          <select name="pais" id="pais" class="form-control">
-            <% for ( String paisArbitro : listapaises) {%>
-            <option value="<%=paisArbitro%>">
-              <%=paisArbitro%>
+          <label for="Autoservicio">Autoservicio</label>
+          <select name="Autoservicio" id="Autoservicio" class="form-control">
+            <%  i =1 ;for ( String autoservicio : listaAutoservicios) {%>
+            <option value="<%=i%>">
+              <%=autoservicio%>
             </option>
-            <% }%>
+            <% i++;}%>
           </select>
-
         </div>
+
+
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="<%= request.getContextPath()%>/ArbitroServlet" class="btn btn-danger">Cancelar</a>
       </form>
