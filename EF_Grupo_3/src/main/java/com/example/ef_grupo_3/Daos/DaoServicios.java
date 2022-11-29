@@ -24,8 +24,8 @@ public class DaoServicios extends DaoBase{
             while(rs.next()){
                 Impresion3D impresion3D = new Impresion3D();
                 impresion3D.setFecha(rs.getString(9));
-                impresion3D.setCosto(rs.getDouble(11));
-                impresion3D.setRealizacion(rs.getDouble(12));
+                impresion3D.setCosto();
+                impresion3D.setRealizacion();
 
                 listaImpresion3D.add(impresion3D);
             }
