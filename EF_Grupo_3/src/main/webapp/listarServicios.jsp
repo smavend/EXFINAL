@@ -10,7 +10,7 @@
   <title>Mis Datos</title>
 </head>
 <body>
-<jsp:include page="../includes/navbar.jsp">
+<jsp:include page="includes/navbar.jsp">
   <jsp:param name="currentPage" value="datos"/>
 </jsp:include>
 <div class='container'>

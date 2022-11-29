@@ -56,11 +56,11 @@ CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`impresion3D` (
   `autoservicio` INT(1) NOT NULL,
   `valido` INT(1) NOT NULL,
   `fecha` DATETIME NOT NULL,
-  `usuarios_correo` VARCHAR(50) NOT NULL,
+  `correo` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_impresion3D_usuarios1_idx` (`usuarios_correo` ASC) VISIBLE,
+  INDEX `fk_impresion3D_usuarios1_idx` (`correo` ASC) VISIBLE,
   CONSTRAINT `fk_impresion3D_usuarios1`
-    FOREIGN KEY (`usuarios_correo`)
+    FOREIGN KEY (`correo`)
     REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -79,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`corteLaser` (
   `url` VARCHAR(100) NOT NULL,
   `fecha` DATETIME NOT NULL,
   `valido` INT(1) NOT NULL,
-  `usuarios_correo` VARCHAR(50) NOT NULL,
+  `correo` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_corteLaser_usuarios1_idx` (`usuarios_correo` ASC) VISIBLE,
+  INDEX `fk_corteLaser_usuarios1_idx` (`correo` ASC) VISIBLE,
   CONSTRAINT `fk_corteLaser_usuarios1`
-    FOREIGN KEY (`usuarios_correo`)
+    FOREIGN KEY (`correo`)
     REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -99,11 +99,11 @@ CREATE TABLE IF NOT EXISTS `ef_grupo_3`.`escaneo3D` (
   `ancho` DOUBLE NOT NULL,
   `altura` DOUBLE NOT NULL,
   `resolucion` INT(1) NOT NULL,
-  `usuarios_correo` VARCHAR(50) NOT NULL,
+  `correo` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_escaneo3D_usuarios1_idx` (`usuarios_correo` ASC) VISIBLE,
+  INDEX `fk_escaneo3D_usuarios1_idx` (`correo` ASC) VISIBLE,
   CONSTRAINT `fk_escaneo3D_usuarios1`
-    FOREIGN KEY (`usuarios_correo`)
+    FOREIGN KEY (`correo`)
     REFERENCES `ef_grupo_3`.`usuarios` (`correo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
