@@ -100,7 +100,7 @@ public class CorteLaser implements CostoRealizacion {
       double grosor = this.getGrosor().equals("fino")?2.0:3.0;
       double color = this.getColor().equals("rojo")?0.1:0.2;
       double dimensiones = this.getAlto()*this.getAncho()*0.1;
-      double desc
+      double desc = this.getUsuario()
    }
 
    @Override
