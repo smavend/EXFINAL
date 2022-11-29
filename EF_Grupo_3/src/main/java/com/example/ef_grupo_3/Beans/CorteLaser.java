@@ -87,11 +87,16 @@ public class CorteLaser implements CostoRealizacion {
    public void setUsuario(Usuario usuario) {
       this.usuario = usuario;
    }
-
+   public void setCosto(double costo){
+      this.costo = costo;
+   }
    public double getCosto() {
       return costo;
    }
 
+   public void setRealizacion(double realizacion){
+      this.realizacion = realizacion;
+   }
    public double getRealizacion() {
       return realizacion;
    }
@@ -108,5 +113,4 @@ public class CorteLaser implements CostoRealizacion {
    public void setRealizacion() {
 
    }
->>>>>>> ee99634808171906f7a05d80d72e2d14379f8bf8
 }
